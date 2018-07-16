@@ -24,3 +24,8 @@ hs_err_pid*
 
 #Ignore IntelliJ Files
 .idea/
+
+#Add gradle
+.gradle/
+gradle/
+out/
