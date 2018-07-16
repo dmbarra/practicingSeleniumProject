@@ -17,6 +17,7 @@ repositories {
     maven {
         url "http://mavenrepo.eventuate.io/release"
     }
+    mavenCentral()
 }
 
 dependencies {
