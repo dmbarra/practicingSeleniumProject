@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import practicing.pages.ComputerPage;
 import practicing.pages.SearchPage;
 
 import java.net.MalformedURLException;
@@ -13,6 +14,7 @@ public class BaseSetupTest {
 
     protected WebDriver driver;
     protected SearchPage searchPage;
+    protected ComputerPage computerPage;
 
     protected String key;
     protected String category;
@@ -22,6 +24,7 @@ public class BaseSetupTest {
         driver = new RemoteDriverSelenium().connectBrowserStack();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         searchPage = PageFactory.initElements(driver, SearchPage.class);
+        computerPage = PageFactory.initElements(driver, ComputerPage.class);
         driver.get("http://computer-database.herokuapp.com/computers");
     }
 

@@ -15,6 +15,9 @@ public class SearchPage {
     @FindBy(css = "tbody tr")
     private WebElement tableCategory;
 
+    @FindBy(id = "add")
+    private WebElement addNewComputer;
+
 
     public void searchForComputer(String computerName){
         searchBox.sendKeys(computerName);
@@ -24,5 +27,14 @@ public class SearchPage {
     public boolean isElementOnTable(String element) {
         return !tableCategory.findElements(
                 By.xpath("//td[contains(text(),'" + element + "')]")).isEmpty();
+    }
+
+    public void openNewRegisterPager(){
+        addNewComputer.click();
+    }
+
+    //TODO create method and give capacity to validate
+    public boolean isSucessMessagePresent(){
+        return false;
     }
 }
