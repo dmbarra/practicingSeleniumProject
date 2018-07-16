@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group 'practicingSeleniumProject'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.seleniumhq.selenium:selenium-java:3.4.0'
+}
+
+defaultTasks 'clean', 'test', 'build'
+
