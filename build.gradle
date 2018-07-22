@@ -26,5 +26,13 @@ dependencies {
     testCompile 'org.assertj:assertj-core:3.10.0'
 }
 
+task testTestNG(type: Test) {
+    useTestNG()
+}
+
+test {
+    dependsOn 'testTestNG'
+}
+
 defaultTasks 'clean', 'test', 'build'
 
