@@ -12,6 +12,8 @@ public class CreateNewRegister extends BaseSetupTest {
         searchPage.openNewRegisterPager();
         computerPage.fieldComputerName("Daniel's Computer");
         computerPage.fieldIntroducedDate("1981-09-25");
+        computerPage.fieldDiscontinueDate("2078-05-23");
+        computerPage.selectCompany("RCA");
         computerPage.clickSubmit();
         assertThat(searchPage.isSucessMessagePresent()).isEqualTo("Done! Computer Daniel's Computer has been created");
     }

@@ -2,6 +2,7 @@ package practicing.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 
 public class ComputerPage {
 
@@ -15,7 +16,7 @@ public class ComputerPage {
     private WebElement discontinuedDateField;
 
     @FindBy(id = "company")
-    private WebElement companyCheckBox;
+    private WebElement companyDropBox;
 
     @FindBy(xpath = "//*[@id=\"main\"]/form/div/input")
     private WebElement submit;
@@ -34,5 +35,14 @@ public class ComputerPage {
 
     public void clickSubmit() {
         submit.click();
+    }
+
+    public void fieldDiscontinueDate(String discontinueDate) {
+        discontinuedDateField.sendKeys(discontinueDate);
+    }
+
+    public void selectCompany(String company) {
+        Select select=new Select(companyDropBox);
+        select.selectByVisibleText(company);
     }
 }
