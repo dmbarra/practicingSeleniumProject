@@ -17,4 +17,12 @@ public class CreateNewRegister extends BaseSetupTest {
         computerPage.clickSubmit();
         assertThat(searchPage.isSucessMessagePresent()).isEqualTo("Done! Computer Daniel's Computer has been created");
     }
+
+    @Test
+    public void validRequiredFieldToCreateNewRegister(){
+        searchPage.openNewRegisterPager();
+        computerPage.fieldComputerName("");
+        computerPage.clickSubmit();
+        assertThat(computerPage.showErrorOnRequiredFieldName()).isTrue();
+    }
 }

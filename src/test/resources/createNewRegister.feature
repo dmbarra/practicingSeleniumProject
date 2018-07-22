@@ -11,7 +11,7 @@
   When submit the new register
   Then receive a message inform the fields required is not filled
 
-  Scenario: Create new computer without name
+  Scenario: Cancel action to create new computer
   Given I open page to register new computer
   When I filled all field correctly
   And select valid company

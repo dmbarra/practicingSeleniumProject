@@ -21,6 +21,9 @@ public class ComputerPage {
     @FindBy(xpath = "//*[@id=\"main\"]/form/div/input")
     private WebElement submit;
 
+    @FindBy(xpath = "//*[@id=\"main\"]/form/fieldset/div[1]")
+    private WebElement nameIsRequired;
+
     //TODO discovery xpath
     @FindBy(xpath = "")
     private WebElement cancel;
@@ -44,5 +47,9 @@ public class ComputerPage {
     public void selectCompany(String company) {
         Select select=new Select(companyDropBox);
         select.selectByVisibleText(company);
+    }
+
+    public boolean showErrorOnRequiredFieldName() {
+        return nameIsRequired.getAttribute("class").equals("clearfix error");
     }
 }
