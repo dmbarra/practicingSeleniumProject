@@ -9,7 +9,7 @@
 _'../resources/\*.features'_
 
 **Automation test:**<br> 
-_I wrote automation in JAVA + Selenium + testNG.<br>_
+_I wrote automation in JAVA + Selenium + jUnit.<br>_
 _My choice for use RemoteDrive was to avoid problems with environments. I'm using BrowserStack with my personal account.<br>_
 _I use PageFactory to register page components_ <br>
 _I use travisCI to run test on every commit_<br>

@@ -1,9 +1,9 @@
 package practicing.config;
 
+import org.junit.After;
+import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
 import practicing.pages.ComputerPage;
 import practicing.pages.SearchPage;
 
@@ -12,26 +12,23 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseSetupTest {
 
-    protected WebDriver driver;
+    protected WebDriver webDriver;
     protected SearchPage searchPage;
     protected ComputerPage computerPage;
 
-    protected String key;
-    protected String category;
-
-    @BeforeTest
-    public void setUp() throws InterruptedException, MalformedURLException {
-        driver = new RemoteDriverSelenium().connectBrowserStack();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        searchPage = PageFactory.initElements(driver, SearchPage.class);
-        computerPage = PageFactory.initElements(driver, ComputerPage.class);
-        driver.get("http://computer-database.herokuapp.com/computers");
+    @Before
+    public void setUp() throws MalformedURLException {
+        webDriver = new RemoteDriverSelenium().connectBrowserStack();
+        webDriver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        searchPage = PageFactory.initElements(webDriver, SearchPage.class);
+        computerPage = PageFactory.initElements(webDriver, ComputerPage.class);
+        webDriver.get("http://computer-database.herokuapp.com/computers");
     }
 
-    @AfterTest
+    @After
     public void before() {
-        driver.close();
-        driver.quit();
+        webDriver.close();
+        webDriver.quit();
     }
 
 }

@@ -1,6 +1,6 @@
 package practicing;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
 import practicing.config.BaseSetupTest;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
