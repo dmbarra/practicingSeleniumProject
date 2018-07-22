@@ -10,6 +10,8 @@ public class searchComputerTest extends BaseSetupTest {
     @Test
     public void searchForAComputer(){
         searchPage.searchForComputer("ACE");
-        assertThat(searchPage.isElementOnTable("ACE")).isTrue();
+        assertThat(searchPage.isElementsOnTable()).isTrue();
+        assertThat(searchPage.howManyElementsOnTable()).isEqualTo(6);
+        assertThat(searchPage.getTitleText()).isEqualTo("6 computers found");
     }
 }

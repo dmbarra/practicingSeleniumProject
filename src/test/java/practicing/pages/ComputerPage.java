@@ -17,7 +17,7 @@ public class ComputerPage {
     @FindBy(id = "company")
     private WebElement companyCheckBox;
 
-    @FindBy(id = "submit")
+    @FindBy(xpath = "//*[@id=\"main\"]/form/div/input")
     private WebElement submit;
 
     //TODO discovery xpath

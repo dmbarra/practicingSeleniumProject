@@ -13,6 +13,6 @@ public class CreateNewRegister extends BaseSetupTest {
         computerPage.fieldComputerName("Daniel's Computer");
         computerPage.fieldIntroducedDate("1981-09-25");
         computerPage.clickSubmit();
-        assertThat(searchPage.isSucessMessagePresent()).isTrue();
+        assertThat(searchPage.isSucessMessagePresent()).isEqualTo("Done! Computer Daniel's Computer has been created");
     }
 }

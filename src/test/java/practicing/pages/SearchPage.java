@@ -18,15 +18,20 @@ public class SearchPage {
     @FindBy(id = "add")
     private WebElement addNewComputer;
 
+    @FindBy(xpath = "//*[@id=\"main\"]/h1")
+    private WebElement titleLabel;
+
+    @FindBy(xpath = "//*[@id=\"main\"]/div[1]")
+    private WebElement divMessageAlert;
 
     public void searchForComputer(String computerName){
         searchBox.sendKeys(computerName);
         searchSubmit.click();
     }
 
-    public boolean isElementOnTable(String element) {
+    public boolean isElementsOnTable() {
         return !tableCategory.findElements(
-                By.xpath("//td[contains(text(),'" + element + "')]")).isEmpty();
+                By.xpath("//table/tbody/tr/td/a")).isEmpty();
     }
 
     public void openNewRegisterPager(){
@@ -34,7 +39,17 @@ public class SearchPage {
     }
 
     //TODO create method and give capacity to validate
-    public boolean isSucessMessagePresent(){
-        return false;
+    public String isSucessMessagePresent(){
+        return divMessageAlert.getText();
+    }
+
+    public int howManyElementsOnTable() {
+         return tableCategory.findElements(
+                By.xpath("//table/tbody/tr/td/a")).size();
+
+    }
+
+    public String getTitleText(){
+        return titleLabel.getText();
     }
 }
