@@ -24,8 +24,7 @@ public class ComputerPage {
     @FindBy(xpath = "//*[@id=\"main\"]/form/fieldset/div[1]")
     private WebElement nameIsRequired;
 
-    //TODO discovery xpath
-    @FindBy(xpath = "")
+    @FindBy(xpath = "//*[@id=\"main\"]/form/div/a")
     private WebElement cancel;
 
     public void fieldComputerName(String computerName) {
@@ -51,5 +50,9 @@ public class ComputerPage {
 
     public boolean showErrorOnRequiredFieldName() {
         return nameIsRequired.getAttribute("class").equals("clearfix error");
+    }
+
+    public void clickCancel() {
+        cancel.click();
     }
 }

@@ -15,7 +15,7 @@ public class CreateNewRegister extends BaseSetupTest {
         computerPage.fieldDiscontinueDate("2078-05-23");
         computerPage.selectCompany("RCA");
         computerPage.clickSubmit();
-        assertThat(searchPage.isSucessMessagePresent()).isEqualTo("Done! Computer Daniel's Computer has been created");
+        assertThat(searchPage.sucessMessagePresent()).isEqualTo("Done! Computer Daniel's Computer has been created");
     }
 
     @Test
@@ -24,5 +24,16 @@ public class CreateNewRegister extends BaseSetupTest {
         computerPage.fieldComputerName("");
         computerPage.clickSubmit();
         assertThat(computerPage.showErrorOnRequiredFieldName()).isTrue();
+    }
+
+    @Test
+    public void cancelCreationOfNewRegister(){
+        searchPage.openNewRegisterPager();
+        computerPage.fieldComputerName("Daniel's Computer");
+        computerPage.fieldIntroducedDate("1981-09-25");
+        computerPage.fieldDiscontinueDate("2078-05-23");
+        computerPage.selectCompany("RCA");
+        computerPage.clickCancel();
+        assertThat(searchPage.sucessMessagePresent()).isNotEqualTo("Done! Computer Daniel's Computer has been created");
     }
 }

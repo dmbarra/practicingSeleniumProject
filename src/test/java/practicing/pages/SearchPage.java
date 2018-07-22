@@ -38,8 +38,7 @@ public class SearchPage {
         addNewComputer.click();
     }
 
-    //TODO create method and give capacity to validate
-    public String isSucessMessagePresent(){
+    public String sucessMessagePresent(){
         return divMessageAlert.getText();
     }
 
