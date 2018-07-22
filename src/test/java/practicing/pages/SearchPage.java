@@ -51,4 +51,8 @@ public class SearchPage {
     public String getTitleText(){
         return titleLabel.getText();
     }
+
+    public void openFirstResultOnTable() {
+        tableCategory.findElements(By.xpath("//table/tbody/tr/td/a")).get(0).click();
+    }
 }

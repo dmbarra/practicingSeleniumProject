@@ -5,7 +5,7 @@ import practicing.config.BaseSetupTest;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class CreateNewRegister extends BaseSetupTest {
+public class CreateNewRegisterTest extends BaseSetupTest {
 
     @Test
     public void createNewRegister(){

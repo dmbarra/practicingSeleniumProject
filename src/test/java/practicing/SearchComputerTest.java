@@ -5,7 +5,7 @@ import practicing.config.BaseSetupTest;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-public class searchComputerTest extends BaseSetupTest {
+public class SearchComputerTest extends BaseSetupTest {
 
     @Test
     public void searchForAComputer(){

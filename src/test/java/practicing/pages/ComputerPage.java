@@ -27,6 +27,9 @@ public class ComputerPage {
     @FindBy(xpath = "//*[@id=\"main\"]/form/div/a")
     private WebElement cancel;
 
+    @FindBy(xpath = "//*[@id=\"main\"]/form[2]/input")
+    private WebElement delete;
+
     public void fieldComputerName(String computerName) {
         computerNameField.sendKeys(computerName);
     }
@@ -54,5 +57,9 @@ public class ComputerPage {
 
     public void clickCancel() {
         cancel.click();
+    }
+
+    public void clickDelete(){
+        delete.click();
     }
 }
